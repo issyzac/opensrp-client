@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="org.smartgresiter.jhpiego">
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:name="org.smartgresiter.jhpiego.application.JhpiegoApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/JhpiegoTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:theme">
+        <activity android:name="org.smartgresiter.jhpiego.activity.MalariaActivity"></activity>
+        <activity android:name="org.smartgresiter.jhpiego.activity.FamilyPlanningActivity" />
+        <activity android:name="org.smartgresiter.jhpiego.activity.PncActivity" />
+        <activity android:name="org.smartgresiter.jhpiego.activity.LandActivity" />
+        <activity android:name="org.smartgresiter.jhpiego.activity.AncActivity" />
+        <activity
+            android:name=".activity.FamilyRemoveMemberActivity"
+            android:theme="@style/JhpiegoTheme.NoActionBar" />
+        <activity
+            android:name="org.smartgresiter.jhpiego.activity.FamilyProfileMenuActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JhpiegoTheme.NoActionBar" />
+        <activity
+            android:name="org.smartgresiter.jhpiego.activity.FamilyRegisterActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/JhpiegoTheme.NoActionBar" />
+        <activity
+            android:name="org.smartgresiter.jhpiego.activity.FamilyProfileActivity"
+            android:label="@string/title_family_detail"
+            android:parentActivityName="org.smartgresiter.jhpiego.activity.FamilyRegisterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JhpiegoTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.smartgresiter.jhpiego.activity.FamilyRegisterActivity" />
+        </activity>
+        <activity
+            android:name="org.smartgresiter.jhpiego.activity.FamilyOtherMemberProfileActivity"
+            android:label="@string/title_family_detail"
+            android:parentActivityName="org.smartgresiter.jhpiego.activity.FamilyRegisterActivity"
+            android:theme="@style/FamilyTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.smartgresiter.jhpiego.activity.FamilyProfileActivity" />
+        </activity>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/captured_images_path" />
+        </provider>
+
+        <activity
+            android:name="org.smartgresiter.jhpiego.activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/JhpiegoTheme.Login"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.vijay.jsonwizard.activities.JsonWizardFormActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/FamilyTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="org.smartregister.family.activity.FamilyWizardFormActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/FamilyTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="org.smartgresiter.jhpiego.activity.ChildRegisterActivity"
+            android:theme="@style/JhpiegoTheme.NoActionBar" />
+        <activity
+            android:name="org.smartgresiter.jhpiego.activity.ChildProfileActivity"
+            android:label="@string/child_details"
+            android:theme="@style/JhpiegoTheme.NoActionBar" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/captured_images_path" />
+        </provider>
+
+        <activity
+            android:name="org.smartgresiter.jhpiego.activity.MedicalHistoryActivity"
+            android:label="@string/medical_history"
+            android:theme="@style/JhpiegoTheme.NoActionBar" />
+
+        <activity
+            android:name="org.smartgresiter.jhpiego.activity.UpcomingServicesActivity"
+            android:label="@string/upcoming_services"
+            android:theme="@style/JhpiegoTheme.NoActionBar" />
+
+        <service android:name="org.smartregister.immunization.service.intent.VaccineIntentService" />
+        <service android:name="org.smartregister.immunization.service.intent.RecurringIntentService" />
+        <service android:name="org.smartregister.sync.intent.PullUniqueIdsIntentService" />
+        <service android:name="org.smartregister.sync.intent.SyncIntentService" />
+        <service android:name="org.smartregister.sync.intent.ExtendedSyncIntentService" />
+        <service android:name="org.smartregister.sync.intent.ValidateIntentService" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

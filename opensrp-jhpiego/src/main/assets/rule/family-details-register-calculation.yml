@@ -1,0 +1,7 @@
+---
+name: step1_surname
+description: surname calculation
+priority: 1
+condition: "true"
+actions:
+- "calculation = step2_fam_name. != '' ? step2_fam_name : ''"

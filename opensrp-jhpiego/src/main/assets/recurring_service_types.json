@@ -1,0 +1,493 @@
+[
+  {
+    "type": "Exclusive breastfeeding",
+    "service_logic": "",
+    "units": "",
+    "openmrs_service_name": {
+      "parent_entity": "",
+      "entity": "concept",
+      "entity_id": "5526AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "openmrs_date": {
+      "parent_entity": "",
+      "entity": "encounter",
+      "entity_id": "encounter_date"
+    },
+    "services": [
+      {
+        "id": "1",
+        "name": "Exclusive breastfeeding0",
+        "dose": "",
+        "schedule": {
+          "due": {
+            "reference": "dob",
+            "offset": "+0d"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+1m"
+          }
+        }
+      },
+      {
+        "id": "2",
+        "name": "Exclusive breastfeeding1",
+        "dose": "",
+        "schedule": {
+          "due": {
+            "reference": "dob",
+            "offset": "+1m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+2m"
+          }
+        }
+      },
+      {
+        "id": "3",
+        "name": "Exclusive breastfeeding2",
+        "dose": "",
+        "schedule": {
+          "due": {
+            "reference": "dob",
+            "offset": "+2m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+3m"
+          }
+        }
+      },
+      {
+        "id": "4",
+        "name": "Exclusive breastfeeding3",
+        "dose": "",
+        "schedule": {
+          "due": {
+            "reference": "dob",
+            "offset": "+3m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+4m"
+          }
+        }
+      },
+      {
+        "id": "5",
+        "name": "Exclusive breastfeeding4",
+        "dose": "",
+        "schedule": {
+          "due": {
+            "reference": "dob",
+            "offset": "+4m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5m"
+          }
+        }
+      },
+      {
+        "id": "6",
+        "name": "Exclusive breastfeeding5",
+        "dose": "",
+        "schedule": {
+          "due": {
+            "reference": "dob",
+            "offset": "+5m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+6m"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "type": "MNP",
+    "service_logic": "",
+    "units": "",
+    "openmrs_service_name": {
+      "parent_entity": "",
+      "entity": "concept",
+      "entity_id": ""
+    },
+    "openmrs_date": {
+      "parent_entity": "",
+      "entity": "encounter",
+      "entity_id": "encounter_date"
+    },
+    "services": [
+      {
+        "id": "7",
+        "name": "MNP1",
+        "dose": "",
+        "schedule": {
+          "due": {
+            "reference": "dob",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+24m"
+          }
+        }
+      },
+      {
+        "id": "8",
+        "name": "MNP2",
+        "dose": "",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "MNP 1",
+            "offset": "+1m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+24m"
+          }
+        }
+      },
+      {
+        "id": "9",
+        "name": "MNP3",
+        "dose": "",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "MNP 2",
+            "offset": "+1m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+24m"
+          }
+        }
+      },
+      {
+        "id": "10",
+        "name": "MNP4",
+        "dose": "",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "MNP 3",
+            "offset": "+1m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+24m"
+          }
+        }
+      },
+      {
+        "id": "11",
+        "name": "MNP5",
+        "dose": "",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "MNP 4",
+            "offset": "+1m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+24m"
+          }
+        }
+      },
+      {
+        "id": "12",
+        "name": "MNP6",
+        "dose": "",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "MNP 5",
+            "offset": "+1m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+24m"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "type": "Vitamin A",
+    "service_logic": "",
+    "units": "IU",
+    "openmrs_service_name": {
+      "parent_entity": "",
+      "entity": "concept",
+      "entity_id": "86339AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "openmrs_date": {
+      "parent_entity": "",
+      "entity": "encounter",
+      "entity_id": "encounter_date"
+    },
+    "services": [
+      {
+        "id": "13",
+        "name": "Vitamin A1",
+        "dose": "50,000",
+        "schedule": {
+          "due": {
+            "reference": "dob",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+60m"
+          }
+        }
+      },
+      {
+        "id": "14",
+        "name": "Vitamin A2",
+        "dose": "100,000",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Vitamin A 1",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+60m"
+          }
+        }
+      },
+      {
+        "id": "15",
+        "name": "Vitamin A3",
+        "dose": "200,000",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Vitamin A 2",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+60m"
+          }
+        }
+      },
+      {
+        "id": "16",
+        "name": "Vitamin A4",
+        "dose": "200,000",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Vitamin A 3",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+60m"
+          }
+        }
+      },
+      {
+        "id": "17",
+        "name": "Vitamin A5",
+        "dose": "200,000",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Vitamin A 4",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+60m"
+          }
+        }
+      },
+      {
+        "id": "18",
+        "name": "Vitamin A6",
+        "dose": "200,000",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Vitamin A 5",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+60m"
+          }
+        }
+      },
+      {
+        "id": "19",
+        "name": "Vitamin A7",
+        "dose": "200,000",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Vitamin A 6",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+60m"
+          }
+        }
+      },
+      {
+        "id": "20",
+        "name": "Vitamin A8",
+        "dose": "200,000",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Vitamin A 7",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+60m"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "type": "Deworming",
+    "service_logic": "",
+    "units": "mg",
+    "openmrs_service_name": {
+      "parent_entity": "",
+      "entity": "concept",
+      "entity_id": "159922AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "openmrs_date": {
+      "parent_entity": "",
+      "entity": "encounter",
+      "entity_id": "encounter_date"
+    },
+    "services": [
+      {
+        "id": "21",
+        "name": "Deworming1",
+        "dose": "500",
+        "schedule": {
+          "due": {
+            "reference": "dob",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      },
+      {
+        "id": "22",
+        "name": "Deworming2",
+        "dose": "500",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Deworming 1",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      },
+      {
+        "id": "23",
+        "name": "Deworming3",
+        "dose": "500",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Deworming 2",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      },
+      {
+        "id": "24",
+        "name": "Deworming4",
+        "dose": "500",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Deworming 3",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      },
+      {
+        "id": "25",
+        "name": "Deworming5",
+        "dose": "500",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Deworming 4",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      },
+      {
+        "id": "26",
+        "name": "Deworming6",
+        "dose": "500",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Deworming 5",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      },
+      {
+        "id": "27",
+        "name": "Deworming7",
+        "dose": "500",
+        "schedule": {
+          "due": {
+            "reference": "prerequisite",
+            "prerequisite": "Deworming 6",
+            "offset": "+6m"
+          },
+          "expiry": {
+            "reference": "dob",
+            "offset": "+5y"
+          }
+        }
+      }
+    ]
+  }
+]

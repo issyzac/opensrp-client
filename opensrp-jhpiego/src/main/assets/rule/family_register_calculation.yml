@@ -1,0 +1,7 @@
+---
+name: step2_surname
+description: surname calculation
+condition: "step1_fam_name != ''"
+actions:
+- "calculation = step1_fam_name"
+

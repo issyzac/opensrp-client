@@ -1,0 +1,127 @@
+---
+name: step1_surname
+description: surname relevance
+priority: 1
+condition: "!step1_same_as_fam_name.contains('same_as_fam_name')"
+actions:
+ - "isRelevant = true"
+---
+name: step1_dob_entered
+description: dob_entered relevance
+priority: 1
+condition: "!step1_dob_unknown.contains('dob_unknown')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_age
+description: age relevance
+priority: 1
+condition: "step1_dob_unknown.contains('dob_unknown')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_phone_number
+description: phone number relevance
+priority: 1
+condition: "step1_primary_caregiver.contains('Yes')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_other_phone_number
+description: other phone number relevance
+priority: 1
+condition: "step1_primary_caregiver.contains('Yes')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_highest_edu_level
+description: highest edulevel relevance
+priority: 1
+condition: "step1_primary_caregiver.contains('Yes')"
+actions:
+  - "isRelevant = true"
+
+---
+name: step1_id_avail
+description: id_avail relevance
+priority: 1
+condition: " (step1_age != '' && step1_age >= 18) || (step1_dob_entered != '' && helper.formatDate(step1_dob_entered, 'y') >=  18)  "
+actions:
+  - "isRelevant = true"
+
+---
+name: step1_national_id
+desctription: national_id relevance
+priority: 1
+condition: "step1_id_avail == 'National ID'"
+actions:
+  - "isRelevant = true"
+
+
+---
+name: step1_preg_1yr
+description: preg_1yr relevance
+priority: 1
+condition: "step1_wra == '1'"
+actions:
+- "isRelevant = true"
+
+---
+name: step1_birth_cert_available
+description: birth_cert_available relevance
+priority: 1
+condition: "(step1_dob_entered != '' && helper.formatDate(step1_dob_entered, 'y') <= 5) || (step1_age != '' && step1_age <= 5)"
+actions:
+- "isRelevant = true"
+---
+name: step1_birth_regist_number
+description: birth_regist_number relevance
+priority: 1
+condition: "step1_birth_cert_available.contains('Yes')"
+actions:
+- "isRelevant = true"
+
+---
+name: step1_rhc_card
+description: rhc_card relevance
+priority: 1
+condition: "(step1_dob_entered != '' && helper.formatDate(step1_dob_entered, 'y') <= 5) || (step1_age != '' && step1_age <= 5)"
+actions:
+- "isRelevant = true"
+
+---
+name: step1_nutrition_status
+description: nutrition_status relevance
+priority: 1
+condition: "((step1_dob_entered != '' && helper.formatDate(step1_dob_entered, 'y') <= 5) || (step1_age != '' && step1_age <= 5)) && step1_rhc_card.contains('Yes')"
+actions:
+- "isRelevant = true"
+
+---
+name: step1_primary_caregiver
+description: primary_caregiver relevance
+priority: 1
+condition: "(step1_dob_entered != '' && helper.formatDate(step1_dob_entered, 'y') > 5) || (step1_age != '' && step1_age > 5)"
+actions:
+- "isRelevant = true"
+---
+name: step1_service_provider
+description: service_provider relevance
+priority: 1
+condition: "(step1_dob_entered != '' && helper.formatDate(step1_dob_entered, 'y') >= 18) || (step1_age != '' && step1_age >= 18)"
+actions:
+- "isRelevant = true"
+---
+name: step1_leader
+description: leader relevance
+priority: 1
+condition: "(step1_dob_entered != '' && helper.formatDate(step1_dob_entered, 'y') > 5) || (step1_age != '' && step1_age > 5)"
+actions:
+- "isRelevant = true"
+---
+name: step1_leader_other
+description: leader_other relevance
+priority: 1
+condition: "step1_leader.contains('Other')"
+actions:
+- "isRelevant = true"

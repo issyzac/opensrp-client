@@ -1,0 +1,85 @@
+---
+name: step2_surname
+description: surname relevance
+priority: 1
+condition: "!step2_same_as_fam_name.contains('same_as_fam_name')"
+actions:
+  - "isRelevant = true"
+---
+name: step2_dob_entered
+description: dob_entered relevance
+priority: 1
+condition: "!step2_dob_unknown.contains('dob_unknown')"
+actions:
+  - "isRelevant = true"
+
+---
+name: step2_age
+description: age relevance
+priority: 1
+condition: "step2_dob_unknown.contains('dob_unknown')"
+actions:
+  - "isRelevant = true"
+
+---
+name: step2_preg_1yr
+description: preg_1yr calculation
+priority: 1
+condition: "step2_wra != '' && step2_wra == '1'"
+actions:
+  - "isRelevant = true"
+
+---
+name: step2_leader_other
+description: leader_other relevance
+priority: 1
+condition: "step2_leader.contains('Other')"
+actions:
+  - "isRelevant = true"
+
+---
+name: step2_service_provider
+description: service_provider relevance
+priority: 1
+condition: "(step2_dob_entered != '' && helper.formatDate(step2_dob_entered, 'y') >= '18') || (step2_age != '' && step2_age >= '18')"
+actions:
+  - "isRelevant = true"
+
+---
+name: step2_insurance_provider_number
+description: insurance_provider_number relevance
+priority: 1
+condition: "step2_insurance_provider != '' && step2_insurance_provider != 'None' "
+actions:
+  - "isRelevant = true"
+
+---
+name: step2_phone_number
+description: phone_number relevance
+priority: 1
+condition: "step2_primary_caregiver == 'Yes'"
+actions:
+  - "isRelevant = true"
+
+---
+name: step2_other_phone_number
+description: other_phone_number relevance
+priority: 1
+condition: "step2_primary_caregiver == 'Yes'"
+actions:
+  - "isRelevant = true"
+
+---
+name: step2_leader
+description: leader relevance
+priority: 1
+condition: "(step2_dob_entered != '' && helper.formatDate(step2_dob_entered, 'y') > '5') || (step2_age != '' && step2_age > '5')"
+actions:
+  - "isRelevant = true"
+---
+name: step2_leader_other
+description: leader_other relevance
+priority: 1
+condition: "step2_leader.contains('Other')"
+actions:
+  - "isRelevant = true"

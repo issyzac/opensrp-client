@@ -1,0 +1,29 @@
+---
+name: step2_surname
+description: surname calculation
+priority: 1
+condition: "true"
+actions:
+  - "calculation = step1_fam_name != '' ? step1_fam_name : ''"
+---
+name: step2_age_calculated
+description: age_calculated calculation
+priority: 1
+condition: "step2_dob_entered != ''"
+actions:
+  - "calculation = step2_dob_entered != '' ? helper.formatDate(step2_dob_entered, 'y') : step2_age"
+---
+name: step2_wra
+description: wra calculation
+priority: 1
+condition: "(step2_sex != '' && step2_sex.contains('Female')) && (step2_age != '' || step2_dob_entered != '')"
+actions:
+  - "calculation = ((step2_sex != '' && step2_sex.contains('Female')) && ((step2_age != '' && (step2_age >= '15' && step2_age <= '49' ))) || (step2_sex.contains('Female') && ((step2_dob_entered != '' ) && ( helper.formatDate(step2_dob_entered, 'y') >= '15' && helper.formatDate(step2_dob_entered, 'y') <= '49')))) ? 1 : 0"
+
+---
+name: step2_insurance_provider
+description: insurance_provider relevance
+priority: 1
+condition: "step2_insurance_provider != ''"
+actions:
+  - "isRelevant = true"

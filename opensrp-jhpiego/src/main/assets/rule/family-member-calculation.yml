@@ -1,0 +1,51 @@
+---
+name: step1_surname_calculation
+description: surname calculation
+priority: 1
+condition: "true"
+actions:
+ - "calculation = step1_same_as_fam_name.contains('same_as_fam_name')? step1_fam_name : step1_surname"
+
+---
+name: step1_less1month
+description: less1month calculation
+priority: 1
+condition: "true"
+actions:
+  - "calculation = (helper.formatDate(step1_dob_entered, 'm') < '1')? 1 : 0"
+---
+name: step1_1month_1yr
+description: 1month_1yr calculation
+priority: 1
+condition: "true"
+actions:
+  - "calculation = (
+  (step1_age != '' &&  step1_age == '1') ||  (step1_dob_entered != '' && ( helper.formatDate(step1_dob_entered, 'm') >= '1' && helper.formatDate(step1_dob_entered, 'm') <= '12'))) ? 1 : 0"
+---
+name: step1_1yr_5yrs
+description: 1yr_5yrs calculation
+priority: 1
+condition: "true"
+actions:
+  - "calculation = (( step1_age != '' && ( step1_age > '1' && step1_age <= '5' )) || ( step1_dob_entered != '' && ( helper.formatDate(step1_dob_entered, 'm') > '12' && helper.formatDate(step1_dob_entered, 'm') <= 60 ))) ? 1 : 0"
+---
+name: step1_wra
+description: wra calculation
+priority: 1
+condition: "true"
+actions:
+  - "calculation = ( step1_sex.contains('Female') && ( ( step1_age != '' && ( step1_age >= '15' && step1_age <= '49' ) ) ) || ( step1_sex.contains('Female') && ( ( step1_dob_entered != '' ) && ( helper.formatDate(step1_dob_entered, 'y') >= '15' && helper.formatDate(step1_dob_entered, 'y') <= '49' ) ) ) ) ? 1 : 0"
+---
+name: step1_mra
+description: mra calculation
+priority: 1
+condition: "true"
+actions:
+  - "calculation = (( step1_sex.contains('Male') && ( (step1_age != '') && (step1_age >= '15' && step1_age <= '59') ) ) || ( step1_sex.contains('Male') && ( (step1_dob_entered != '') && ( helper.formatDate(step1_dob_entered, 'y') >= '15' && helper.formatDate(step1_dob_entered, 'y') <= '59' ) ) )) ? 1 : 0"
+---
+name: step1_primary_caregiver
+description: surname calculation
+priority: 1
+condition: "true"
+actions:
+- "calculation = step1_same_as_fam_name.contains('same_as_fam_name')? step1_fam_name : step1_surname"
